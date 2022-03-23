@@ -114,13 +114,29 @@
     
     
     <entry>
-      <title>123</title>
-      <link href="/2022/03/12/123/"/>
-      <url>/2022/03/12/123/</url>
+      <title>LeetCode刷题篇(1)-字典序的第K小数字</title>
+      <link href="/2022/03/12/LeetCode(1)/"/>
+      <url>/2022/03/12/LeetCode(1)/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="LeetCode刷题篇-1-字典序的第K小数字"><a href="#LeetCode刷题篇-1-字典序的第K小数字" class="headerlink" title="LeetCode刷题篇(1)-字典序的第K小数字"></a>LeetCode刷题篇(1)-字典序的第K小数字</h2><p><a href="https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order/">链接</a></p><p>题目：给定整数n和k，返回[1,n]中字典序第k小的数字。</p><p>首先我看到这道题目心里反正是一脸懵逼的，然后写了个时间复杂度超过O(n)的解法，然后就爆了<br>代码如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;string&gt; a;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            a.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>());</span><br><span class="line">        string s = a[k<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">atoi</span>(s.<span class="built_in">c_str</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>可以看的出来我是通过先将[1,n]转为字符串，然后排序，根据k可找到该数字，可惜题目要求n最大为1e9,所以爆了。</p><p><strong>字典树的理解：</strong><br>根据字典序的排序是一个树的前序遍历，故这个树就是字典树。</p><p><strong>字典序的理解：</strong><br>简而言之，就是根据数字的前缀进行排序，比如 10 &lt; 9，因为 10 的前缀是 1，比 9 小。再比如 112 &lt; 12，因为 112 的前缀 11小于 12。<br>这样排序下来，会跟平常的升序排序会有非常大的不同。</p><p>然后这道题解法如下：<br>首先从节点1进入，当前节点设为n(i),右兄弟节点设为n(i+1)<br>分为两种情况：</p><ul><li><p><strong>当前n(i)下的节点数量 &gt; k</strong> : 则所要寻找的数字必定在n(i)节点下，因为本身一棵树的前序遍历就是按照字典序来的，故这种找法肯定对。</p></li><li><p><strong>当前n(i)下的节点数量 &lt;= k</strong> :<br>这种情况下我们就可以不必考虑第k小的数字在当前节点下了，并且将当前的节点(cur)加一，变为右兄弟节点。</p></li></ul><p>关键是如何求解一个节点下的节点数呢？</p><ul><li>当前节点是cur，则当前节点的右兄弟节点是cur+1，然后就是一层一层的遍历，并且右兄弟节点的左子孙也跟着一起遍历，知道当前节点下的子孙节点超出了n，则停止循环，即可得到节点数。</li></ul><p>代码如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">1</span>;</span><br><span class="line">        k--;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(k&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> left = cur,right = cur+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> step = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(left&lt;=n)&#123;</span><br><span class="line">                step += <span class="built_in">min</span>((<span class="keyword">long</span> <span class="keyword">long</span>)n+<span class="number">1</span>,right) - left;</span><br><span class="line">                left *= <span class="number">10</span>;</span><br><span class="line">                right *= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(step &lt;= k)&#123;</span><br><span class="line">                cur++;</span><br><span class="line">                k -= step;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                k--;</span><br><span class="line">                cur *= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> C/C++ </category>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
       
     </entry>
     
