@@ -37,7 +37,7 @@
       <link href="/2022/03/27/JWT_01/"/>
       <url>/2022/03/27/JWT_01/</url>
       
-        <content type="html"><![CDATA[<h2 id="基于JWT的token验证"><a href="#基于JWT的token验证" class="headerlink" title="基于JWT的token验证"></a>基于JWT的token验证</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="基于JWT的token验证"><a href="#基于JWT的token验证" class="headerlink" title="基于JWT的token验证"></a>基于JWT的token验证</h2><p><strong>此博客更新待定…</strong><br><a href="https://www.jianshu.com/p/576dbf44b2ae">什么是 JWT – JSON WEB TOKEN</a><br><a href="https://www.cnblogs.com/fengzheng/p/8416393.html">常用登录验证方式</a><br><a href="https://www.bilibili.com/video/BV1i54y1m7cP?spm_id_from=333.337.search-card.all.click">JWT_B站精讲</a></p>]]></content>
       
       
       <categories>
@@ -50,6 +50,10 @@
         <tags>
             
             <tag> JWT </tag>
+            
+            <tag> 面试 </tag>
+            
+            <tag> 项目开发 </tag>
             
         </tags>
       
