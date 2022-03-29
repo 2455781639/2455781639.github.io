@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>蓝桥杯刷题_04</title>
+      <link href="/2022/03/29/lanqiao_04/"/>
+      <url>/2022/03/29/lanqiao_04/</url>
+      
+        <content type="html"><![CDATA[<h2 id="蓝桥杯刷题-04"><a href="#蓝桥杯刷题-04" class="headerlink" title="蓝桥杯刷题_04"></a>蓝桥杯刷题_04</h2><hr><p><a href="http://lx.lanqiao.cn/problem.page?gpid=T798###">题目链接</a></p><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>平面上有N条线，给出每条直线的斜率和截距，求出这个平面被划分成多少块？</p><p>这道题主要解法就是找<strong>规律</strong>！</p><ul><li><p>当平面只有一条线时，平面被划分成2块</p></li><li><p>当平面有两条线时</p><ul><li>第二条线与第一条线<strong>平行</strong>时，平面被划分成3块</li><li>第二条线与第一条线<strong>重合</strong>时，划分不影响</li><li>第二条线与第一条线<strong>相交</strong>时，平面划分成4块</li></ul></li><li><p>当平面有三条线时，在前面两条线的基础上</p><ul><li><p>与前面两条线<strong>平行</strong>，平面划分块数+1</p></li><li><p>与前面两条线<strong>重合</strong>，不变</p></li><li><p>与前面两条线<strong>相交</strong></p><ul><li>相交点重合，4(原来)+2</li><li>相交点不重合，4(原来)+2+1<br>…</li></ul></li></ul></li></ul><p>以此规律下去，对重合的不考虑，以及平行情况另外加一，相交情况则判断当前线i与前面i-1条线的相交情况，根据相交点不重合数进行考虑。</p><p>代码如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ld,ld&gt; p; </span><br><span class="line"></span><br><span class="line">set&lt;p&gt; s1,s2;</span><br><span class="line">set&lt;p&gt; ::iterator it;</span><br><span class="line">ld A[<span class="number">1005</span>],B[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n,i=<span class="number">0</span>;</span><br><span class="line">cin&gt;&gt;n;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line"><span class="keyword">int</span> a,b;</span><br><span class="line">cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">s1.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(a,b));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>,it=s1.<span class="built_in">begin</span>();it!=s1.<span class="built_in">end</span>();it++,i++)&#123;</span><br><span class="line">A[i] = (*it).first;</span><br><span class="line">B[i] = (*it).second;</span><br><span class="line">&#125;</span><br><span class="line">ll ans = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;s1.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=i<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line"><span class="keyword">if</span>(A[i] == A[j]) <span class="keyword">continue</span>;</span><br><span class="line">ld p1 = (B[i] - B[j])/(A[j] - A[i]);</span><br><span class="line">ld p2 = (A[j]*B[i] - A[i]*B[j])/(A[j] - A[i]);</span><br><span class="line">s2.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(p1,p2));</span><br><span class="line">&#125;</span><br><span class="line">ans += s2.<span class="built_in">size</span>() + <span class="number">1</span>;</span><br><span class="line">s2.<span class="built_in">clear</span>();</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;ans;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 蓝桥杯 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 蓝桥杯 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>蓝桥杯刷题_03</title>
       <link href="/2022/03/29/lanqiao_03/"/>
       <url>/2022/03/29/lanqiao_03/</url>
