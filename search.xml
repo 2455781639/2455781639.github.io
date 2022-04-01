@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>LeetCode刷题篇(4)-二倍数对数组</title>
+      <link href="/2022/04/01/LeetCode(4)/"/>
+      <url>/2022/04/01/LeetCode(4)/</url>
+      
+        <content type="html"><![CDATA[<h2 id="LeetCode刷题篇-4-二倍数对数组"><a href="#LeetCode刷题篇-4-二倍数对数组" class="headerlink" title="LeetCode刷题篇(4)-二倍数对数组"></a>LeetCode刷题篇(4)-二倍数对数组</h2><hr><p><a href="https://leetcode-cn.com/problems/array-of-doubled-pairs/">题目链接</a></p><p>给定一个长度为偶数的整数数组 <code>arr</code>，只有对 <code>arr</code> 进行重组后可以满足 “对于每个 <code>0 &lt;= i &lt; len(arr) / 2</code>，都有 <code>arr[2 * i + 1] = 2 * arr[2 * i]</code>” 时，返回<code>true</code>；否则，返回 <code>false</code>。</p><p>这道题刚开始想着暴力来做用next_permutation()来暴力，可惜这如果暴力下去肯定超时；故采用哈希表来做</p><ul><li>首先哈希表适用于这种存储有负数的数组，且需要统计数量的操作。</li><li>其次这道题本身就是找出一个数是另一个数的两倍，并且成对成对出现。</li></ul><p>题解：<br>故首先对数组中的数计算每个数的数量，用哈希表存储。</p><p>哈希表的<code>key==0</code>时，<code>value</code>必须为偶数，因为一旦不为偶数则造成0冗余，则返回<code>false</code></p><p>再将哈希表的key用普通数组存储，并且对key的绝对值进行排序，排序后就可以对哈希表进行检索成对出现。</p><p>C++代码：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canReorderDoubled</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; arr)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; um;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i:arr)&#123;</span><br><span class="line">            ++um[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(um[<span class="number">0</span>] % <span class="number">2</span> != <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">vc</span><span class="params">(um.size())</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;[x,_] : um)&#123;</span><br><span class="line">            vc.<span class="built_in">push_back</span>(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(vc.<span class="built_in">begin</span>(),vc.<span class="built_in">end</span>(),[](<span class="keyword">int</span> a,<span class="keyword">int</span> b)&#123; <span class="keyword">return</span> <span class="built_in">abs</span>(a) &lt; <span class="built_in">abs</span>(b);&#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x:vc)&#123;</span><br><span class="line">            <span class="keyword">if</span>(um[<span class="number">2</span>*x] &lt; um[x]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            um[<span class="number">2</span>*x] -= um[x];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>蓝桥杯刷题_08_砝码称重</title>
       <link href="/2022/03/31/lanqiao_08/"/>
       <url>/2022/03/31/lanqiao_08/</url>
