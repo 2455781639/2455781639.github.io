@@ -5,6 +5,31 @@
     
     <entry>
       <title>LeetCode刷题篇(4)-二倍数对数组</title>
+      <link href="/2022/04/02/mysql_01/"/>
+      <url>/2022/04/02/mysql_01/</url>
+      
+        <content type="html"><![CDATA[<h2 id="MySQL中的limit与offset"><a href="#MySQL中的limit与offset" class="headerlink" title="MySQL中的limit与offset"></a>MySQL中的limit与offset</h2><p>首先看以下两条MySQL语句</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span>,<span class="number">2</span>;</span><br><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">2</span> <span class="keyword">offset</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure><p>当然熟悉<code>MySQL</code>的人应该知道以上语句实现的内容一样</p><p>为何一样呢？</p><blockquote><p>首先我们先来了解以下limit与offset</p></blockquote><h2 id="只有limit时"><a href="#只有limit时" class="headerlink" title="只有limit时"></a>只有limit时</h2><ul><li>只有一个参数时</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这一句的意思是直接取所有name中的前3条数据。</p><ul><li>有两个参数时</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span>,<span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这句sql含义是跳过1条数据取3条数据.</p><h2 id="limit与offset同时出现"><a href="#limit与offset同时出现" class="headerlink" title="limit与offset同时出现"></a>limit与offset同时出现</h2><blockquote><p>这种情况时只有一种sql语句</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span> <span class="keyword">offset</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这句sql表示的是跳过3语句，从第四条记录开始取1条记录。</p><p>以上<code>MySQL</code>用法一般用于分页，配合<code>order by</code>只用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode刷题篇(4)-二倍数对数组</title>
       <link href="/2022/04/01/LeetCode(4)/"/>
       <url>/2022/04/01/LeetCode(4)/</url>
       
