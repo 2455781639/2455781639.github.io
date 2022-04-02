@@ -1,7 +1,7 @@
 WIDGET = {
   "CONFIG": {
     "modules": "01234",
-    "background": "1",
+    "background": "5",
     "tmpColor": "FF0000",
     "tmpSize": "16",
     "cityColor": "FFFF00",
