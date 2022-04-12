@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>MySQL&amp;LeetCode_001</title>
+      <link href="/2022/04/12/SQL/mysql_02/"/>
+      <url>/2022/04/12/SQL/mysql_02/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1873-计算特殊奖金"><a href="#1873-计算特殊奖金" class="headerlink" title="1873. 计算特殊奖金"></a>1873. 计算特殊奖金</h2><p>题目图片如下：<br><img src="/img/LeetCode/leetcode001.jpg" alt="题目"></p><p>MySQL代码如下：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"><span class="keyword">select</span> employee_id,</span><br><span class="line">    if(</span><br><span class="line">        employee_id<span class="operator">%</span><span class="number">2</span> <span class="operator">=</span> <span class="number">1</span> <span class="keyword">and</span> name <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">&#x27;M%&#x27;</span>,</span><br><span class="line">        salary,</span><br><span class="line">        <span class="number">0</span></span><br><span class="line">    ) <span class="keyword">as</span> bonus</span><br><span class="line"><span class="keyword">from</span> Employees</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> employee_id;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL中的limit与offset</title>
       <link href="/2022/04/02/SQL/mysql_01/"/>
       <url>/2022/04/02/SQL/mysql_01/</url>
@@ -542,7 +569,7 @@
       <link href="/2022/01/03/hello-world/"/>
       <url>/2022/01/03/hello-world/</url>
       
-        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p><h1 id="wls应邀出席blog"><a href="#wls应邀出席blog" class="headerlink" title="wls应邀出席blog"></a>wls应邀出席blog</h1><p><img src="/img/other/wls01.jpg" alt="wls"></p>]]></content>
       
       
       
