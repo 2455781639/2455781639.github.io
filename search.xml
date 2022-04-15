@@ -62,7 +62,7 @@
       <link href="/2022/04/12/interview/"/>
       <url>/2022/04/12/interview/</url>
       
-        <content type="html"><![CDATA[<h1 id="欢迎各位大佬给我私信补充"><a href="#欢迎各位大佬给我私信补充" class="headerlink" title="欢迎各位大佬给我私信补充"></a>欢迎各位大佬给我私信补充</h1><h1 id="阿里蚂蚁JAVA"><a href="#阿里蚂蚁JAVA" class="headerlink" title="阿里蚂蚁JAVA"></a>阿里蚂蚁JAVA</h1><p>1.MySQL索引数据结构？<br><a href="https://blog.csdn.net/day_ue/article/details/120523823">MySQL索引数据结构</a><br><a href="https://www.jb51.net/article/225232.htm">深入解析MySQL索引数据结构</a></p><p>2.有了解过间隙锁吗？<br><a href="https://www.jianshu.com/p/55299e1329e7">间隙锁 gap lock</a><br><a href="https://blog.51cto.com/u_14057963/2936958">你能分别谈谈innodb下的记录锁，间隙锁，next-key锁吗</a></p><p>3.有没有了解过倒排索引？<br><a href="https://blog.csdn.net/qq_43403025/article/details/114779166">信息检索——简单易懂的倒排索引</a><br><a href="https://www.jianshu.com/p/0193dc44135b">倒排索引–搜索引擎入门</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="以下经验均由我朋友面试得出"><a href="#以下经验均由我朋友面试得出" class="headerlink" title="以下经验均由我朋友面试得出"></a>以下经验均由我朋友面试得出</h1><h1 id="阿里蚂蚁JAVA"><a href="#阿里蚂蚁JAVA" class="headerlink" title="阿里蚂蚁JAVA"></a>阿里蚂蚁JAVA</h1><p>1.MySQL索引数据结构？<br><a href="https://blog.csdn.net/day_ue/article/details/120523823">MySQL索引数据结构</a><br><a href="https://www.jb51.net/article/225232.htm">深入解析MySQL索引数据结构</a></p><p>2.有了解过间隙锁吗？<br><a href="https://www.jianshu.com/p/55299e1329e7">间隙锁 gap lock</a><br><a href="https://blog.51cto.com/u_14057963/2936958">你能分别谈谈innodb下的记录锁，间隙锁，next-key锁吗</a></p><p>3.有没有了解过倒排索引？<br><a href="https://blog.csdn.net/qq_43403025/article/details/114779166">信息检索——简单易懂的倒排索引</a><br><a href="https://www.jianshu.com/p/0193dc44135b">倒排索引–搜索引擎入门</a></p>]]></content>
       
       
       
