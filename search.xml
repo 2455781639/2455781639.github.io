@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Springboot学习001</title>
+      <link href="/2022/04/19/Springboot%E5%AD%A6%E4%B9%A0/Springboot001/"/>
+      <url>/2022/04/19/Springboot%E5%AD%A6%E4%B9%A0/Springboot001/</url>
+      
+        <content type="html"><![CDATA[<ul><li>首先说明一下是B站狂神说的视频截图</li></ul><p><img src="/img/SpringBoot/SpringBoot001.jpg" alt="Springboot启动结论"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Springboot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+            <tag> Springboot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL(字符串函数)</title>
       <link href="/2022/04/15/SQL/mysql_03/"/>
       <url>/2022/04/15/SQL/mysql_03/</url>
