@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>JSR303校验</title>
+      <link href="/2022/04/23/Springboot%E5%AD%A6%E4%B9%A0/JSR303/"/>
+      <url>/2022/04/23/Springboot%E5%AD%A6%E4%B9%A0/JSR303/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JSR303校验"><a href="#JSR303校验" class="headerlink" title="JSR303校验"></a><code>JSR303</code>校验</h1><h2 id="关于JSR303"><a href="#关于JSR303" class="headerlink" title="关于JSR303"></a>关于<code>JSR303</code></h2><p><code>JSR</code>是<code>Java Specification Requests</code>的缩写，意思是<code>Java</code> 规范提案。是指向<code>JCP(Java Community Process)</code>提出新增一个标准化技术规范的正式请求。任何人都可以提交<code>JSR</code>，以向<code>Java</code>平台增添新的<code>API</code>和服务。<code>JSR</code>已成为<code>Java</code>界的一个重要标准。</p><blockquote><p>JSR-303 是JAVA EE 6 中的一项子规范，叫做Bean Validation，Hibernate Validator 是 Bean Validation 的参考实现 . Hibernate Validator 提供了 JSR 303 规范中所有内置 constraint 的实现，除此之外还有一些附加的 constraint。</p></blockquote><p><code>JSR303</code>一般用于登录注册邮箱验证等方面的验证操作，如果自己写代码去验证也不是不行，但是每次写项目都会要这些验证，所以会造成代码冗余，<br>这其实也相当于Lombok工具一样很方便，但是我们作为初学者应该更多的去掌握原理方法！</p><h2 id="关于JSR303的相关注解"><a href="#关于JSR303的相关注解" class="headerlink" title="关于JSR303的相关注解"></a>关于JSR303的相关注解</h2><p><img src="/img/SpringBoot/JSR303.jpg" alt="JSR303相关注解"></p><p><strong>补充</strong>: <code>hibernate</code>中的一部分</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Email</span><span class="comment">//被注释的元素必须为电子邮件</span></span><br><span class="line"><span class="meta">@Range</span><span class="comment">//被注释的元素必须在合适的范围内</span></span><br></pre></td></tr></table></figure><h1 id="后续使用待更中，必须是结合项目才能实现"><a href="#后续使用待更中，必须是结合项目才能实现" class="headerlink" title="后续使用待更中，必须是结合项目才能实现"></a>后续使用待更中，必须是结合项目才能实现</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> JSR303 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+            <tag> Springboot </tag>
+            
+            <tag> JSR303 </tag>
+            
+            <tag> 待更新 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Springboot学习001</title>
       <link href="/2022/04/19/Springboot%E5%AD%A6%E4%B9%A0/Springboot001/"/>
       <url>/2022/04/19/Springboot%E5%AD%A6%E4%B9%A0/Springboot001/</url>
@@ -25,6 +58,8 @@
             <tag> Spring </tag>
             
             <tag> Springboot </tag>
+            
+            <tag> 待更新 </tag>
             
         </tags>
       
@@ -99,6 +134,8 @@
             
             <tag> 面试 </tag>
             
+            <tag> 待更新 </tag>
+            
         </tags>
       
     </entry>
@@ -137,7 +174,7 @@
       <link href="/2022/04/02/SQL/mysql_01/"/>
       <url>/2022/04/02/SQL/mysql_01/</url>
       
-        <content type="html"><![CDATA[<h2 id="MySQL中的limit与offset"><a href="#MySQL中的limit与offset" class="headerlink" title="MySQL中的limit与offset"></a>MySQL中的limit与offset</h2><p>首先看以下两条MySQL语句</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span>,<span class="number">2</span>;</span><br><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">2</span> <span class="keyword">offset</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure><p>当然熟悉<code>MySQL</code>的人应该知道以上语句实现的内容一样</p><p>为何一样呢？</p><blockquote><p>首先我们先来了解以下limit与offset</p></blockquote><h2 id="只有limit时"><a href="#只有limit时" class="headerlink" title="只有limit时"></a>只有limit时</h2><ul><li>只有一个参数时</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这一句的意思是直接取所有name中的前3条数据。</p><ul><li>有两个参数时</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span>,<span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这句sql含义是跳过1条数据取3条数据.</p><h2 id="limit与offset同时出现"><a href="#limit与offset同时出现" class="headerlink" title="limit与offset同时出现"></a>limit与offset同时出现</h2><blockquote><p>这种情况时只有一种sql语句</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span> <span class="keyword">offset</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这句sql表示的是跳过3语句，从第四条记录开始取1条记录。</p><p>以上<code>MySQL</code>用法一般用于分页，配合<code>order by</code>只用</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="MySQL中的limit与offset"><a href="#MySQL中的limit与offset" class="headerlink" title="MySQL中的limit与offset"></a>MySQL中的limit与offset</h2><p>首先看以下两条MySQL语句</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span>,<span class="number">2</span>;</span><br><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">2</span> <span class="keyword">offset</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure><p>当然熟悉<code>MySQL</code>的人应该知道以上语句实现的内容一样</p><p>为何一样呢？</p><blockquote><p>首先我们先来了解以下limit与offset</p></blockquote><h2 id="只有limit时"><a href="#只有limit时" class="headerlink" title="只有limit时"></a>只有limit时</h2><ul><li>只有一个参数时</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这一句的意思是直接取所有name中的前3条数据。</p><ul><li>有两个参数时</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span>,<span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这一句含义是跳过1条数据取3条数据.</p><h2 id="limit与offset同时出现"><a href="#limit与offset同时出现" class="headerlink" title="limit与offset同时出现"></a>limit与offset同时出现</h2><blockquote><p>这种情况时只有一种sql语句</p></blockquote><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> student limit <span class="number">1</span> <span class="keyword">offset</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure><p>这句sql表示的是跳过3语句，从第四条记录开始取1条记录。</p><p>以上<code>MySQL</code>用法一般用于分页，配合<code>order by</code>使用</p>]]></content>
       
       
       <categories>
@@ -532,6 +569,8 @@
             <tag> Java </tag>
             
             <tag> MybatisPlus </tag>
+            
+            <tag> 待更新 </tag>
             
         </tags>
       
