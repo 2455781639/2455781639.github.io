@@ -20,6 +20,8 @@
       
         <tags>
             
+            <tag> 待更新 </tag>
+            
             <tag> Java </tag>
             
             <tag> Spring </tag>
@@ -27,8 +29,6 @@
             <tag> Springboot </tag>
             
             <tag> JSR303 </tag>
-            
-            <tag> 待更新 </tag>
             
         </tags>
       
@@ -41,7 +41,7 @@
       <link href="/2022/04/19/Springboot%E5%AD%A6%E4%B9%A0/Springboot001/"/>
       <url>/2022/04/19/Springboot%E5%AD%A6%E4%B9%A0/Springboot001/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>首先说明以下是B站狂神说的视频截图</p></blockquote><p><img src="/img/SpringBoot/SpringBoot001.jpg" alt="Springboot启动结论"></p><h1 id="Springboot知识引入"><a href="#Springboot知识引入" class="headerlink" title="Springboot知识引入"></a>Springboot知识引入</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Spring Boot是由Pivotal团队提供的全新框架，</span><br><span class="line">其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，</span><br><span class="line">从而使开发人员不再需要定义样板化的配置。通过这种方式，</span><br><span class="line">Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。</span><br></pre></td></tr></table></figure><p><a href="https://spring.io/projects/spring-boot">Springboot官方网站</a></p><h1 id="新建Springboot项目"><a href="#新建Springboot项目" class="headerlink" title="新建Springboot项目"></a>新建<code>Springboot</code>项目</h1><ul><li>第一种方法：</li></ul><p>通过<a href="https://start.spring.io/">官方网站</a>新建项目，下载到本地用IDEA打开即可</p><ul><li>第二种方法：</li></ul><p>通过<code>IDEA</code>直接<code>new</code>一个<code>Spring</code>项目即可</p><p><img src="/img/SpringBoot/SpringBoot002.jpg" alt="IDEA创建SpringBoot项目"></p><p>但是最近我出现了这种情况</p><blockquote><p>Initialization failed for ‘<a href="https://start.spring.io&/#39;">https://start.spring.io&#39;</a> Please check URL, network and proxy settings. </p></blockquote><p>以上错误信息可以参考<a href="https://blog.csdn.net/qq_42815122/article/details/85551956">解决办法</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Springboot引文"><a href="#Springboot引文" class="headerlink" title="Springboot引文"></a>Springboot引文</h1><p>所有本博客没有写到的东西我均在其他博客记载</p><blockquote><p>传送门</p></blockquote><p><a href="https://blog.csdn.net/qq_51289087/article/details/124381221?spm=1001.2014.3001.5501">Springboot多环境配置</a><br><a href="../JSR303">JSR303检验</a></p><blockquote><p>首先说明以下是B站狂神说的视频截图</p></blockquote><p><img src="/img/SpringBoot/SpringBoot001.jpg" alt="Springboot启动结论"></p><h1 id="Springboot知识引入"><a href="#Springboot知识引入" class="headerlink" title="Springboot知识引入"></a>Springboot知识引入</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Spring Boot是由Pivotal团队提供的全新框架，</span><br><span class="line">其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，</span><br><span class="line">从而使开发人员不再需要定义样板化的配置。通过这种方式，</span><br><span class="line">Spring Boot致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。</span><br></pre></td></tr></table></figure><p><a href="https://spring.io/projects/spring-boot">Springboot官方网站</a></p><h1 id="新建Springboot项目"><a href="#新建Springboot项目" class="headerlink" title="新建Springboot项目"></a>新建<code>Springboot</code>项目</h1><ul><li>第一种方法：</li></ul><p>通过<a href="https://start.spring.io/">官方网站</a>新建项目，下载到本地用IDEA打开即可</p><ul><li>第二种方法：</li></ul><p>通过<code>IDEA</code>直接<code>new</code>一个<code>Spring</code>项目即可</p><p><img src="/img/SpringBoot/SpringBoot002.jpg" alt="IDEA创建SpringBoot项目"></p><p>但是最近我出现了这种情况</p><blockquote><p>Initialization failed for ‘<a href="https://start.spring.io&/#39;">https://start.spring.io&#39;</a> Please check URL, network and proxy settings. </p></blockquote><p>以上错误信息可以参考<a href="https://blog.csdn.net/qq_42815122/article/details/85551956">解决办法</a></p><h1 id="Springboot静态资源问题"><a href="#Springboot静态资源问题" class="headerlink" title="Springboot静态资源问题"></a>Springboot静态资源问题</h1>]]></content>
       
       
       <categories>
@@ -53,13 +53,13 @@
       
         <tags>
             
+            <tag> 待更新 </tag>
+            
             <tag> Java </tag>
             
             <tag> Spring </tag>
             
             <tag> Springboot </tag>
-            
-            <tag> 待更新 </tag>
             
         </tags>
       
@@ -566,11 +566,11 @@
       
         <tags>
             
+            <tag> 待更新 </tag>
+            
             <tag> Java </tag>
             
             <tag> MybatisPlus </tag>
-            
-            <tag> 待更新 </tag>
             
         </tags>
       
