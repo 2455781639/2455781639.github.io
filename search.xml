@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>LeetCode刷题任务</title>
+      <link href="/2022/05/04/leetcode/LeetCode(6)/"/>
+      <url>/2022/05/04/leetcode/LeetCode(6)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="2022-5-4–第一天"><a href="#2022-5-4–第一天" class="headerlink" title="2022/5/4–第一天"></a>2022/5/4–第一天</h1><p><a href="https://leetcode-cn.com/problems/one-away-lcci/">面试题 01.05. 一次编辑</a>–已做<br><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/">面试题 01.07. 旋转矩阵</a>–已做<br><a href="https://leetcode-cn.com/problems/longest-repeating-character-replacement/">424. 替换后的最长重复字符</a>–已做*<br><a href="https://leetcode-cn.com/problems/zero-matrix-lcci/">面试题 01.08. 零矩阵</a>–已做<br><a href="https://leetcode-cn.com/problems/route-between-nodes-lcci/">面试题 04.01. 节点间通路</a>–已做*</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL&amp;LeetCode刷题篇(1)</title>
       <link href="/2022/05/02/SQL/mysql_04/"/>
       <url>/2022/05/02/SQL/mysql_04/</url>
