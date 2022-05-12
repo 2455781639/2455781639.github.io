@@ -4,11 +4,67 @@
   
     
     <entry>
+      <title>Springboot学习&amp;Model数据经过重定向丢失</title>
+      <link href="/2022/05/12/Springboot%E5%AD%A6%E4%B9%A0/Springboot002/"/>
+      <url>/2022/05/12/Springboot%E5%AD%A6%E4%B9%A0/Springboot002/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Model数据经过重定向丢失"><a href="#Model数据经过重定向丢失" class="headerlink" title="Model数据经过重定向丢失"></a>Model数据经过重定向丢失</h1><p>在这里说明一下有两种解决方案</p><blockquote><p>重定向不改变</p></blockquote><h2 id="第一种解决方案"><a href="#第一种解决方案" class="headerlink" title="第一种解决方案"></a>第一种解决方案</h2><p><code>Model</code> 换成 <code>RedirectAttributesModelMap</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RedirectAttributesModelMap model;</span><br><span class="line">model.addAttribute(<span class="string">&quot;department&quot;</span>,list);</span><br></pre></td></tr></table></figure><h2 id="第二种解决方案"><a href="#第二种解决方案" class="headerlink" title="第二种解决方案"></a>第二种解决方案</h2><p>利用session传输数据</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session;</span><br><span class="line">session.setAttribute(<span class="string">&quot;department&quot;</span>,list);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Springboot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+            <tag> Springboot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript表单验证</title>
+      <link href="/2022/05/12/Springboot%E5%AD%A6%E4%B9%A0/js_form/"/>
+      <url>/2022/05/12/Springboot%E5%AD%A6%E4%B9%A0/js_form/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JavaScript-校验表单弹框"><a href="#JavaScript-校验表单弹框" class="headerlink" title="JavaScript 校验表单弹框"></a>JavaScript 校验表单弹框</h1><h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">alertBox</span>(<span class="params">message, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!message) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> template_alert_box =</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;modal&quot; id=&quot;alert-box&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot;&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot; style=&quot;margin:100px auto;&quot;&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;modal-content&quot;&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;modal-header&quot;&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;h5 class=&quot;modal-title&quot;&gt;提示&lt;/h5&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;/button&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;/div&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;modal-body&quot;&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;p id=&quot;alert-box-message&quot;&gt;&lt;/p&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;/div&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;div class=&quot;modal-footer&quot;&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-dismiss=&quot;modal&quot;&gt;确定&lt;/button&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;/div&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;/div&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;/div&gt;&#x27;</span>+</span><br><span class="line">        <span class="string">&#x27;&lt;/div&gt;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ($(<span class="string">&quot;#alert-box&quot;</span>)) $(<span class="string">&quot;#alert-box&quot;</span>).remove();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> $box = $(template_alert_box);</span><br><span class="line">    $box.find(<span class="string">&quot;#alert-box-message&quot;</span>).text(message);</span><br><span class="line">    $box.modal(&#123;<span class="attr">backdrop</span>:<span class="string">&quot;static&quot;</span>, <span class="attr">show</span>:<span class="literal">true</span>&#125;);</span><br><span class="line">    <span class="keyword">if</span> (callback) $box.on(<span class="string">&#x27;hidden.bs.modal&#x27;</span>, callback);</span><br><span class="line">    $(<span class="string">&quot;body&quot;</span>).append($box);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkEmail</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> strEmail = <span class="built_in">document</span>.add.email.value;</span><br><span class="line">    <span class="keyword">const</span> strRegex = <span class="regexp">/^(\w-*\.*)+@(\w-?)+(\.\w&#123;2,&#125;)+$/</span>;</span><br><span class="line">    <span class="keyword">if</span> (strEmail.length===<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        alertBox(<span class="string">&quot;电子邮件不能为空!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!strRegex.test(strEmail))&#123;</span><br><span class="line">        alertBox(<span class="string">&quot;邮箱输入有误!&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkDate</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> date__ = <span class="built_in">document</span>.add.birth.value;</span><br><span class="line">    <span class="keyword">const</span> re =<span class="regexp">/^(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)$/</span>;</span><br><span class="line">    <span class="keyword">if</span>(!re.test(date__))&#123;</span><br><span class="line">        <span class="comment">//判断日期格式为YYYY-MM-DD标准</span></span><br><span class="line">        alertBox(<span class="string">&quot;日期校验格式有误，例如2022-10-10&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>样式如下</p></blockquote><p><img src="/img/SpringBoot/js_form_001.jpg" alt="弹框样式"></p><hr><font color="red"><p>​ 你好</p></font>]]></content>
+      
+      
+      <categories>
+          
+          <category> Springboot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 待更新 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode刷题任务</title>
       <link href="/2022/05/04/leetcode/LeetCode(6)/"/>
       <url>/2022/05/04/leetcode/LeetCode(6)/</url>
       
-        <content type="html"><![CDATA[<h1 id="2022-5-4–第一天"><a href="#2022-5-4–第一天" class="headerlink" title="2022/5/4–第一天"></a>2022/5/4–第一天</h1><p><a href="https://leetcode-cn.com/problems/one-away-lcci/">面试题 01.05. 一次编辑</a>–已做<br><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/">面试题 01.07. 旋转矩阵</a>–已做<br><a href="https://leetcode-cn.com/problems/longest-repeating-character-replacement/">424. 替换后的最长重复字符</a>–已做*<br><a href="https://leetcode-cn.com/problems/zero-matrix-lcci/">面试题 01.08. 零矩阵</a>–已做<br><a href="https://leetcode-cn.com/problems/route-between-nodes-lcci/">面试题 04.01. 节点间通路</a>–已做*</p><hr><h1 id="2022-5-5–第二天"><a href="#2022-5-5–第二天" class="headerlink" title="2022/5/5–第二天"></a>2022/5/5–第二天</h1><p><a href="https://leetcode-cn.com/problems/minimum-consecutive-cards-to-pick-up/">2260. 必须拿起的最小连续卡牌数</a>–已做*<br><a href="https://leetcode-cn.com/problems/permutations/">46. 全排列</a>–已做*<br><a href="https://leetcode-cn.com/problems/3sum/">15. 三数之和</a>–已做*<br><a href="https://leetcode-cn.com/problems/spiral-matrix/">54. 螺旋矩阵</a>–已做*<br><a href="https://leetcode-cn.com/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a>–已做</p><h2 id="今日总结："><a href="#今日总结：" class="headerlink" title="今日总结："></a>今日总结：</h2><p>花部分时间整合mybatis在员工管理系统中，对于多表多对一联表查询中需要结合<code>resultMap</code><br>一般项目结构中必不可少的就是多表查询，且表与表之间可能会存在多对多，多对一的关系，这里就避免不了mybatis的一些知识，但可能读者你会用Mybatis_plus.</p><p><a href="https://blog.csdn.net/qq_43110032/article/details/117465270">mybatis多对一</a></p><hr><h1 id="2022-5-6–第三天"><a href="#2022-5-6–第三天" class="headerlink" title="2022/5/6–第三天"></a>2022/5/6–第三天</h1><p>休息一天</p><hr><h1 id="2022-5-7–第四天"><a href="#2022-5-7–第四天" class="headerlink" title="2022/5/7–第四天"></a>2022/5/7–第四天</h1><p><a href="https://leetcode-cn.com/problems/list-of-depth-lcci/">面试题 04.03. 特定深度节点链表</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="2022-5-4–第一天"><a href="#2022-5-4–第一天" class="headerlink" title="2022/5/4–第一天"></a>2022/5/4–第一天</h1><p><a href="https://leetcode-cn.com/problems/one-away-lcci/">面试题 01.05. 一次编辑</a>–已做<br><a href="https://leetcode-cn.com/problems/rotate-matrix-lcci/">面试题 01.07. 旋转矩阵</a>–已做<br><a href="https://leetcode-cn.com/problems/longest-repeating-character-replacement/">424. 替换后的最长重复字符</a>–已做*<br><a href="https://leetcode-cn.com/problems/zero-matrix-lcci/">面试题 01.08. 零矩阵</a>–已做<br><a href="https://leetcode-cn.com/problems/route-between-nodes-lcci/">面试题 04.01. 节点间通路</a>–已做*</p><hr><h1 id="2022-5-5–第二天"><a href="#2022-5-5–第二天" class="headerlink" title="2022/5/5–第二天"></a>2022/5/5–第二天</h1><p><a href="https://leetcode-cn.com/problems/minimum-consecutive-cards-to-pick-up/">2260. 必须拿起的最小连续卡牌数</a>–已做*<br><a href="https://leetcode-cn.com/problems/permutations/">46. 全排列</a>–已做*<br><a href="https://leetcode-cn.com/problems/3sum/">15. 三数之和</a>–已做*<br><a href="https://leetcode-cn.com/problems/spiral-matrix/">54. 螺旋矩阵</a>–已做*<br><a href="https://leetcode-cn.com/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a>–已做</p><h2 id="今日总结："><a href="#今日总结：" class="headerlink" title="今日总结："></a>今日总结：</h2><p>花部分时间整合mybatis在员工管理系统中，对于多表多对一联表查询中需要结合<code>resultMap</code><br>一般项目结构中必不可少的就是多表查询，且表与表之间可能会存在多对多，多对一的关系，这里就避免不了mybatis的一些知识，但可能读者你会用Mybatis_plus.</p><p><a href="https://blog.csdn.net/qq_43110032/article/details/117465270">mybatis多对一</a></p><hr><h1 id="2022-5-6–第三天"><a href="#2022-5-6–第三天" class="headerlink" title="2022/5/6–第三天"></a>2022/5/6–第三天</h1><p>休息一天</p><hr><h1 id="2022-5-7–第四天"><a href="#2022-5-7–第四天" class="headerlink" title="2022/5/7–第四天"></a>2022/5/7–第四天</h1><p><a href="https://leetcode-cn.com/problems/list-of-depth-lcci/">面试题 04.03. 特定深度节点链表</a><br><a href="https://leetcode-cn.com/problems/valid-parentheses/">20. 有效的括号</a>–已做<br><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组</a>–已做*<br><a href="https://leetcode-cn.com/problems/multiply-strings/">43. 字符串相乘</a><br><a href="https://leetcode-cn.com/problems/unique-paths/">62. 不同路径</a></p><blockquote><p>sql:<br><a href="https://leetcode-cn.com/problems/department-highest-salary/">184. 部门工资最高的员工</a></p></blockquote>]]></content>
       
       
       <categories>
@@ -106,8 +162,6 @@
       
       
         <tags>
-            
-            <tag> 待更新 </tag>
             
             <tag> Java </tag>
             
@@ -764,7 +818,7 @@
       <link href="/2022/01/03/hello-world/"/>
       <url>/2022/01/03/hello-world/</url>
       
-        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p><hr><blockquote><p>github提交流程：</p></blockquote><p>前提是文件夹中已经有.git文件夹，指定了上传仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;this is my first commit&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
