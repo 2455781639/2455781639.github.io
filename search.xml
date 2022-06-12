@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>蓝桥杯刷题_09_板子</title>
+      <link href="/2022/06/12/%E8%93%9D%E6%A1%A5%E6%9D%AF/lanqiao_09/"/>
+      <url>/2022/06/12/%E8%93%9D%E6%A1%A5%E6%9D%AF/lanqiao_09/</url>
+      
+        <content type="html"><![CDATA[<h1 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">10000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">qqow</span><span class="params">(ll a,ll b)</span></span>&#123;</span><br><span class="line">  ll ans=<span class="number">1</span>,base = a;</span><br><span class="line">  <span class="keyword">while</span>(b &gt; <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(b&amp;<span class="number">1</span> != <span class="number">0</span>)&#123;</span><br><span class="line">      ans = (ans*base)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    base = (base*base)%mod;</span><br><span class="line">    b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  cout&lt;&lt;<span class="built_in">qqow</span>(<span class="number">2</span>,<span class="number">10</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 蓝桥杯 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+            <tag> 蓝桥杯 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>有感而发</title>
       <link href="/2022/05/12/own/"/>
       <url>/2022/05/12/own/</url>
