@@ -4,6 +4,72 @@
   
     
     <entry>
+      <title>Redis&amp;Springboot</title>
+      <link href="/2022/07/07/%E9%A1%B9%E7%9B%AE/redis/"/>
+      <url>/2022/07/07/%E9%A1%B9%E7%9B%AE/redis/</url>
+      
+        <content type="html"><![CDATA[<h1 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 待更新 </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> Springboot </tag>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nowcoderProject</title>
+      <link href="/2022/07/07/%E9%A1%B9%E7%9B%AE/nowcoder_project/"/>
+      <url>/2022/07/07/%E9%A1%B9%E7%9B%AE/nowcoder_project/</url>
+      
+        <content type="html"><![CDATA[<h1 id="待更，等项目全部完善后更新"><a href="#待更，等项目全部完善后更新" class="headerlink" title="待更，等项目全部完善后更新"></a>待更，等项目全部完善后更新</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 待更新 </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> Springboot </tag>
+            
+            <tag> Redis </tag>
+            
+            <tag> Kafka </tag>
+            
+            <tag> Elastisearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode刷题篇(6)-每日一题</title>
       <link href="/2022/06/24/leetcode/LeetCode(6)/"/>
       <url>/2022/06/24/leetcode/LeetCode(6)/</url>
@@ -56,11 +122,11 @@
     
     
     <entry>
-      <title>有感而发</title>
+      <title>项目开发感触</title>
       <link href="/2022/05/12/own/"/>
       <url>/2022/05/12/own/</url>
       
-        <content type="html"><![CDATA[<h1 id="第一个Springboot项目有感而发"><a href="#第一个Springboot项目有感而发" class="headerlink" title="第一个Springboot项目有感而发"></a>第一个Springboot项目有感而发</h1><hr><blockquote><p> 首先这个项目具体是在b站狂神说Java中跟着学的一个项目，静态资源与后端的联系非常紧密，可以说是非常的密切，友好的连接后端和前端静态资源最完美的方法我觉得现如今是Thymeleaf模板引擎，thymeleaf可以很完美的将前端跳转到后端并传输相应的数据，同样的后端也可以完美的将数据通过Model、httpSession等封装传给前端，前后端分离中间的缝合就是由Thymeleaf完成。</p><p> 但是Thymeleaf要学的东西很多很多，如果我掌握甚至说精通Thymeleaf，那么我也可以说我什么系统以后能够拿下，至于其中的实现难度或者说逻辑难度另说，首要要做的还是要熟悉Thymeleaf的语法，其次是Mybatis/MybatisPlus与Springboot的整合，业务逻辑都是由Dao层实现，但是每一个业务逻辑我们作为一个成年人是很容易构想出来的，但是实现呢？实现的过程呢？，这是个问题，不仅仅跳转来回就能实现，主要还是考察我SQL代码的编写能力以及数据库中表字段，表与表之间的联系以及Mybatis/MybatisPlus的熟练运用，这是很关键也是很致命的一步，如果这一步解决的话那么其他的代码编写那就没有任何问题（单单指的是业务代码）。</p><p> 那么对于上面所说到的SQL以及Mybatis整合，考察的还是SQL编程能力，不仅仅是CRUD，还要尽可能的实现系统该实现的所有的业务，不能畏难，要勇于直前，尽可能的挖掘项目系统中所有可以想到的业务并把它实现。（SQL学习）</p><p> 一个项目系统的实现肯定不仅仅是有增删改查，很多数据的呈现，数据的整理，数据的更改都有着一定的规律/规定，并且项目系统的安全也是必须要考量的，系统的安全这就涉及到系统的普通用户和管理员的权限问题，以及可能涉及到的游客或者系统中存在其他低权限管理员（高级用户）等用户的存在，所以必须考虑安全问题。</p><p> 总结：第一次的Springboot项目缺点很多，但是给了我足够多的知识、信心和让我知道了我有多么的不足，让我更有信心去往更深层次的项目开展。</p><p>日期： 2022/5/12 18:14        作者：张文卓</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="第一个Springboot项目-员工管理系统-有感而发"><a href="#第一个Springboot项目-员工管理系统-有感而发" class="headerlink" title="第一个Springboot项目(员工管理系统)有感而发"></a>第一个Springboot项目(员工管理系统)有感而发</h1><hr><p><a href="https://github.com/2455781639/first_Springboot_project">项目链接</a></p><blockquote><p> 首先这个项目具体是在b站狂神说Java中跟着学的一个项目，静态资源与后端的联系非常紧密，可以说是非常的密切，友好的连接后端和前端静态资源最完美的方法我觉得现如今是Thymeleaf模板引擎，thymeleaf可以很完美的将前端跳转到后端并传输相应的数据，同样的后端也可以完美的将数据通过Model、httpSession等封装传给前端，前后端分离中间的缝合就是由Thymeleaf完成。</p><p> 但是Thymeleaf要学的东西很多很多，如果我掌握甚至说精通Thymeleaf，那么我也可以说我什么系统以后能够拿下，至于其中的实现难度或者说逻辑难度另说，首要要做的还是要熟悉Thymeleaf的语法，其次是Mybatis/MybatisPlus与Springboot的整合，业务逻辑都是由Dao层实现，但是每一个业务逻辑我们作为一个成年人是很容易构想出来的，但是实现呢？实现的过程呢？，这是个问题，不仅仅跳转来回就能实现，主要还是考察我SQL代码的编写能力以及数据库中表字段，表与表之间的联系以及Mybatis/MybatisPlus的熟练运用，这是很关键也是很致命的一步，如果这一步解决的话那么其他的代码编写那就没有任何问题（单单指的是业务代码）。</p><p> 那么对于上面所说到的SQL以及Mybatis整合，考察的还是SQL编程能力，不仅仅是CRUD，还要尽可能的实现系统该实现的所有的业务，不能畏难，要勇于直前，尽可能的挖掘项目系统中所有可以想到的业务并把它实现。（SQL学习）</p><p> 一个项目系统的实现肯定不仅仅是有增删改查，很多数据的呈现，数据的整理，数据的更改都有着一定的规律/规定，并且项目系统的安全也是必须要考量的，系统的安全这就涉及到系统的普通用户和管理员的权限问题，以及可能涉及到的游客或者系统中存在其他低权限管理员（高级用户）等用户的存在，所以必须考虑安全问题。</p><p> 总结：第一次的Springboot项目缺点很多，但是给了我足够多的知识、信心和让我知道了我有多么的不足，让我更有信心去往更深层次的项目开展。</p><p>日期： 2022/5/12 18:14        作者：张文卓</p></blockquote>]]></content>
       
       
       
@@ -852,11 +918,11 @@
     
     
     <entry>
-      <title>Hello World</title>
+      <title>Hello Chris</title>
       <link href="/2022/01/03/hello-world/"/>
       <url>/2022/01/03/hello-world/</url>
       
-        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p><hr><blockquote><p>github提交流程：</p></blockquote><p>前提是文件夹中已经有.git文件夹，指定了上传仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;this is my first commit&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure><h2 id="软件质量测试作业三"><a href="#软件质量测试作业三" class="headerlink" title="软件质量测试作业三"></a>软件质量测试作业三</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span>  <span class="keyword">int</span>  <span class="title">My_program</span> <span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> cycle, <span class="keyword">boolean</span> flag)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>( cycle &gt; <span class="number">0</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>( flag == <span class="keyword">true</span> )</span><br><span class="line">        &#123;</span><br><span class="line">            ret = num - <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>( num%<span class="number">2</span> ==<span class="number">0</span> )</span><br><span class="line">            &#123;</span><br><span class="line">                ret = ret * <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                ret = ret + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cycle--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>请为程序模块My_program</p></blockquote><ul><li><p>画出程序控制流图，计算控制流图的环路复杂度</p></li><li><p>导出基本路径</p></li><li><p>设计测试用例实现基本路径覆盖</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p><hr><blockquote><p>github提交流程：</p></blockquote><p>前提是文件夹中已经有.git文件夹，指定了上传仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;this is my first commit&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
