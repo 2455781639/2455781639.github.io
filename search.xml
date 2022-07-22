@@ -4,6 +4,247 @@
   
     
     <entry>
+      <title>LeetCode刷题篇(12)-最大间距</title>
+      <link href="/2022/07/22/leetcode/LeetCode(12)/"/>
+      <url>/2022/07/22/leetcode/LeetCode(12)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="最大间距"><a href="#最大间距" class="headerlink" title="最大间距"></a>最大间距</h1><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a><a href="https://leetcode.cn/problems/maximum-gap/">题目链接</a></h2><hr><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><blockquote><p>给定一个无序的数组<code>nums</code>，返回 数组在排序之后，相邻元素之间最大的差值 。如果数组元素个数小于 2，则返回 0 。<br>您必须编写一个在「线性时间」内运行并使用「线性额外空间」的算法。</p></blockquote><hr><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>由桶排序的算法我们可以知道，桶排序的过程中每次都是选取一定范围内的值塞进了同一个桶，所以根据这个题我们可以知道，利用桶排序的算法可以解决这个最大间距的问题，每一个桶中的最小值与前一个桶的最大值相比较，寻找差值的最大值即是最大间距。</p><p>时间复杂度：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container><br>空间复杂度：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p><hr><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximumGap</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> min = Arrays.stream(nums).min().getAsInt();<span class="comment">//利用流找最小值</span></span><br><span class="line">        <span class="keyword">int</span> max = Arrays.stream(nums).max().getAsInt();<span class="comment">//最大值</span></span><br><span class="line">        <span class="keyword">int</span> interval = Math.max((max - min) / (n - <span class="number">1</span>),<span class="number">1</span>);<span class="comment">//桶的大小</span></span><br><span class="line">        <span class="keyword">int</span> bucketSize = (max - min) / interval + <span class="number">1</span>;<span class="comment">//桶的个数</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[][] buckets = <span class="keyword">new</span> <span class="keyword">int</span>[bucketSize][<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bucketSize;++i){</span><br><span class="line">            Arrays.fill(buckets[i], -<span class="number">1</span>);<span class="comment">//全部赋值-1</span></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) {</span><br><span class="line">            <span class="keyword">int</span> index =  (num - min) / interval;</span><br><span class="line">            <span class="keyword">if</span>(buckets[index][<span class="number">0</span>] == -<span class="number">1</span>) {</span><br><span class="line">                buckets[index][<span class="number">0</span>] = buckets[index][<span class="number">1</span>] = num;</span><br><span class="line">            }<span class="keyword">else</span> {</span><br><span class="line">                buckets[index][<span class="number">0</span>] = Math.min(buckets[index][<span class="number">0</span>], num);<span class="comment">//桶的最小值</span></span><br><span class="line">                buckets[index][<span class="number">1</span>] = Math.max(buckets[index][<span class="number">1</span>], num);<span class="comment">//桶的最大值</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">int</span> maxGap = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pre = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; buckets.length; i++) {</span><br><span class="line">            <span class="keyword">if</span>(buckets[i][<span class="number">0</span>] == -<span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(pre != -<span class="number">1</span>){</span><br><span class="line">                maxGap = Math.max(maxGap, buckets[i][<span class="number">0</span>] - buckets[pre][<span class="number">1</span>]);</span><br><span class="line">            }</span><br><span class="line">            pre = i;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> maxGap;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>桶排序</title>
+      <link href="/2022/07/22/sort/sort(8)/"/>
+      <url>/2022/07/22/sort/sort(8)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计数排序</title>
+      <link href="/2022/07/22/sort/sort(7)/"/>
+      <url>/2022/07/22/sort/sort(7)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>堆排序</title>
+      <link href="/2022/07/22/sort/sort(6)/"/>
+      <url>/2022/07/22/sort/sort(6)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>快速排序</title>
+      <link href="/2022/07/22/sort/sort(5)/"/>
+      <url>/2022/07/22/sort/sort(5)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>归并排序</title>
+      <link href="/2022/07/22/sort/sort(4)/"/>
+      <url>/2022/07/22/sort/sort(4)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>插入排序</title>
+      <link href="/2022/07/22/sort/sort(3)/"/>
+      <url>/2022/07/22/sort/sort(3)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>选择排序</title>
+      <link href="/2022/07/22/sort/sort(2)/"/>
+      <url>/2022/07/22/sort/sort(2)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>冒泡排序</title>
+      <link href="/2022/07/22/sort/sort(1)/"/>
+      <url>/2022/07/22/sort/sort(1)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode刷题篇(11)-四数之和</title>
       <link href="/2022/07/20/leetcode/LeetCode(11)/"/>
       <url>/2022/07/20/leetcode/LeetCode(11)/</url>
@@ -1028,7 +1269,7 @@
       <link href="/2022/01/08/first/first/"/>
       <url>/2022/01/08/first/first/</url>
       
-        <content type="html"><![CDATA[<h3 id="这个代码是我第一次写代码时调试了很久的代码"><a href="#这个代码是我第一次写代码时调试了很久的代码" class="headerlink" title="这个代码是我第一次写代码时调试了很久的代码"></a>这个代码是我第一次写代码时调试了很久的代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> x,y,z,a,b,c;</span><br><span class="line"><span class="keyword">int</span> h,m,s;</span><br><span class="line"><span class="keyword">int</span> p,q,r;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d:%d:%d\n&quot;</span>,&amp;x,&amp;y,&amp;z);</span><br><span class="line"><span class="comment">//printf(&quot;%d:%d:%d\n&quot;,x,y,z);</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d:%d:%d&quot;</span>,&amp;a,&amp;b,&amp;c); </span><br><span class="line">p=x*<span class="number">3600</span>+y*<span class="number">60</span>+z;</span><br><span class="line">q=a*<span class="number">3600</span>+b*<span class="number">60</span>+c;</span><br><span class="line"><span class="keyword">if</span>(p&gt;q)&#123;</span><br><span class="line">r=p-q;</span><br><span class="line">s=r%<span class="number">60</span>;</span><br><span class="line">h=r/<span class="number">3600</span>;</span><br><span class="line">m=(r-h*<span class="number">3600</span>-s)/<span class="number">60</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">r=q-p;</span><br><span class="line">s=r%<span class="number">60</span>;</span><br><span class="line">h=r/<span class="number">3600</span>;</span><br><span class="line">m=(r-h*<span class="number">3600</span>-s)/<span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d:%d:%d\n&quot;</span>,h,m,s);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="这个代码是我第一次写代码时调试了很久的代码"><a href="#这个代码是我第一次写代码时调试了很久的代码" class="headerlink" title="这个代码是我第一次写代码时调试了很久的代码"></a>这个代码是我第一次写代码时调试了很久的代码</h1><blockquote><p>如果时光可以倒流，我也想去打比赛得很多的奖呜呜呜</p></blockquote><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> x,y,z,a,b,c;</span><br><span class="line"><span class="keyword">int</span> h,m,s;</span><br><span class="line"><span class="keyword">int</span> p,q,r;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d:%d:%d\n&quot;</span>,&amp;x,&amp;y,&amp;z);</span><br><span class="line"><span class="comment">//printf(&quot;%d:%d:%d\n&quot;,x,y,z);</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d:%d:%d&quot;</span>,&amp;a,&amp;b,&amp;c); </span><br><span class="line">p=x*<span class="number">3600</span>+y*<span class="number">60</span>+z;</span><br><span class="line">q=a*<span class="number">3600</span>+b*<span class="number">60</span>+c;</span><br><span class="line"><span class="keyword">if</span>(p&gt;q)&#123;</span><br><span class="line">r=p-q;</span><br><span class="line">s=r%<span class="number">60</span>;</span><br><span class="line">h=r/<span class="number">3600</span>;</span><br><span class="line">m=(r-h*<span class="number">3600</span>-s)/<span class="number">60</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">r=q-p;</span><br><span class="line">s=r%<span class="number">60</span>;</span><br><span class="line">h=r/<span class="number">3600</span>;</span><br><span class="line">m=(r-h*<span class="number">3600</span>-s)/<span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d:%d:%d\n&quot;</span>,h,m,s);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -1047,7 +1288,7 @@
       <link href="/2022/01/03/hello-world/"/>
       <url>/2022/01/03/hello-world/</url>
       
-        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p><hr><blockquote><p>github提交流程：</p></blockquote><p>前提是文件夹中已经有.git文件夹，指定了上传仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;this is my first commit&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="Chris-Hello-World"><a href="#Chris-Hello-World" class="headerlink" title="Chris:Hello,World!"></a>Chris:Hello,World!</h2><p>You are Welcome!</p><p><strong>欢迎你来到我的Blog，来到这你就是我的朋友</strong><br><strong>本Blog主要记载的就是我本人的学习记录，以及相关的比较有趣的事情，欢迎关注！</strong></p><p><em>我是来自鲁东大学软件工程系19级的张文卓</em><br><em>本人爱好是敲代码，如果你是志同道合的朋友，欢迎加入Coding！</em><br><em>QQ:2455781639(表明来意)</em></p><hr><blockquote><p>github提交流程：</p></blockquote><p>前提是文件夹中已经有.git文件夹，指定了上传仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;this is my first commit&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure><h2 id="随便放的一些知识点"><a href="#随便放的一些知识点" class="headerlink" title="随便放的一些知识点"></a>随便放的一些知识点</h2><p><img src="https://uploadfiles.nowcoder.com/images/20180713/3807435_1531450430478_A1E3D6CDC367DED01B519240FF9FA63F" alt="Java八大数据类型初始化值"></p>]]></content>
       
       
       
