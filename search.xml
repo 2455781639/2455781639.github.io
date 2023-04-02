@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>实习纪要-2023/4/2</title>
+      <link href="/2023/04/02/work/work001/"/>
+      <url>/2023/04/02/work/work001/</url>
+      
+        <content type="html"><![CDATA[<h1 id="实习工作内容记录"><a href="#实习工作内容记录" class="headerlink" title="实习工作内容记录"></a>实习工作内容记录</h1><h2 id="工作事件"><a href="#工作事件" class="headerlink" title="工作事件"></a>工作事件</h2><ol><li>重构设备拆装-考试插件数据库</li><li>IDFS-可视化巡检对接RTDS实时数据</li><li>重构设备拆装(APMS)-&gt;脚本工具服务(STS)-文件模块&amp;步骤模块</li><li>独山子-大检修：文件预览&amp;检修进度报表&amp;首页驾驶舱接口开发</li><li>物料统计App迁移至后端成立单独服务，管网寻阀等待定</li></ol><h2 id="技术文档"><a href="#技术文档" class="headerlink" title="技术文档"></a>技术文档</h2><p>待补充</p><h2 id="下一步工作重点"><a href="#下一步工作重点" class="headerlink" title="下一步工作重点"></a>下一步工作重点</h2><ol><li>前端学习，掌握CSS调样式，JS、Vue框架、elementUI框架等公司前端基本框架</li><li>多构思提升系统服务性能方面的猜想，细节到代码</li><li>继续研究Spring框架源码，利用主流框架特点构建更完善的程序</li><li>写代码时多点细心，对基础Stream语法，Java设计模式代码对研究一点</li></ol><p>– 通用研发部-Java开发工程师 张文卓</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode刷题篇(21)-下一个排列</title>
       <link href="/2022/10/03/leetcode/LeetCode(21)/"/>
       <url>/2022/10/03/leetcode/LeetCode(21)/</url>
